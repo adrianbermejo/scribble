@@ -73,11 +73,11 @@ public class DrawDemo
             int green = random.nextInt(256);
             int blue = random.nextInt(256);
             pen.setColor(new Color(red, green, blue));
-            
+
             pen.randomSquiggle();
         }
     }
-    
+
     /**
      * Clear the screen.
      */
@@ -85,63 +85,80 @@ public class DrawDemo
     {
         myCanvas.erase();
     }
-    
+
     /**
      * dibujAr triangulos indicando posicion de uno de los verticesx,y (sera regular)
      */
     public void triangulo(int x,int y){
-     Pen pen = new Pen(x,y, myCanvas);
-     pen.setColor(Color.GREEN);
-     
-     for(int i=0;i<3;i++){
-         pen.move(100);
-         pen.turn(-120);
+        Pen pen = new Pen(x,y, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        for(int i=0;i<3;i++){
+            pen.move(100);
+            pen.turn(-120);
         }
-     
+
     }
-    
-     /**
-      * (fallo al hacer u pentagono)
+
+    /**
+     * (fallo al hacer u pentagono)
      * dibujAr pentagrama satanico indicando posicion de uno de los verticesx,y (sera regular)
      */
     public void pentagramaSatanico(int x,int y){
-     Pen pen = new Pen(x,y, myCanvas);
-     pen.setColor(Color.GREEN);
-     
-     for(int i=0;i<5;i++){
-         pen.move(100);
-         pen.turn(-144);
+        Pen pen = new Pen(x,y, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        for(int i=0;i<5;i++){
+            pen.move(100);
+            pen.turn(-144);
         }
-     
+
     }
-    
-     /**
-      * 
+
+    /**
+     * 
      * dibujAr pentagono indicando posicion de uno de los verticesx,y (sera regular)
      */
     public void pentagono(int x,int y){
-     Pen pen = new Pen(x,y, myCanvas);
-     pen.setColor(Color.GREEN);
-     
-     for(int i=0;i<5;i++){
-         pen.move(100);
-         pen.turn(288);
+        Pen pen = new Pen(x,y, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        for(int i=0;i<5;i++){
+            pen.move(100);
+            pen.turn(288);
         }
-     
+
     }
-    
-     /**
-      * 
+
+    /**
+     * 
      * dibujArpoligono indicando posicion de uno de los verticesx,y el numero de lados (sera regular)
      */
     public void poligonoRegular(int nLados,int x,int y){
-     Pen pen = new Pen(x,y, myCanvas);
-     pen.setColor(Color.GREEN);
-     
-     for(int i=0;i<nLados;i++){
-         pen.move(100);
-         pen.turn(-360/nLados);
+        Pen pen = new Pen(x,y, myCanvas);
+        pen.setColor(Color.GREEN);
+        if(nLados>2){
+            for(int i=0;i<nLados;i++){
+                pen.move(100);
+                pen.turn(-360/nLados);
+            }
         }
-     
+        else {
+            System.out.print("error no tiene lados suficientes");
+        }
     }
+    
+    /**
+     * 
+     * dibuja espiral
+     */
+    public void espiral(int vueltas){
+        Pen pen = new Pen(250,250, myCanvas);
+        pen.setColor(Color.GREEN);
+        
+            for(int i=3;i<vueltas;i++){
+                pen.move(i*4);
+                pen.turn(90);
+            }
+}
 }
