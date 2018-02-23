@@ -99,4 +99,34 @@ public class DrawDemo
         }
      
     }
+    
+     /**
+      * (fallo al hacer u pentagono)
+     * dibujAr pentagrama satanico indicando posicion de uno de los verticesx,y (sera regular)
+     */
+    public void pentagramaSatanico(int x,int y){
+     Pen pen = new Pen(x,y, myCanvas);
+     pen.setColor(Color.GREEN);
+     
+     for(int i=0;i<5;i++){
+         pen.move(100);
+         pen.turn(-144);
+        }
+     
+    }
+    
+     /**
+      * (fallo al hacer u pentagono)
+     * dibujAr pentagrama satanico indicando posicion de uno de los verticesx,y (sera regular)
+     */
+    public void pentagono(int x,int y){
+     Pen pen = new Pen(x,y, myCanvas);
+     pen.setColor(Color.GREEN);
+     
+     for(int i=0;i<5;i++){
+         pen.move(100);
+         pen.turn(288);
+        }
+     
+    }
 }
