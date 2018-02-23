@@ -116,8 +116,8 @@ public class DrawDemo
     }
     
      /**
-      * (fallo al hacer u pentagono)
-     * dibujAr pentagrama satanico indicando posicion de uno de los verticesx,y (sera regular)
+      * 
+     * dibujAr pentagono indicando posicion de uno de los verticesx,y (sera regular)
      */
     public void pentagono(int x,int y){
      Pen pen = new Pen(x,y, myCanvas);
@@ -126,6 +126,21 @@ public class DrawDemo
      for(int i=0;i<5;i++){
          pen.move(100);
          pen.turn(288);
+        }
+     
+    }
+    
+     /**
+      * 
+     * dibujArpoligono indicando posicion de uno de los verticesx,y el numero de lados (sera regular)
+     */
+    public void poligonoRegular(int nLados,int x,int y){
+     Pen pen = new Pen(x,y, myCanvas);
+     pen.setColor(Color.GREEN);
+     
+     for(int i=0;i<nLados;i++){
+         pen.move(100);
+         pen.turn(-360/nLados);
         }
      
     }
