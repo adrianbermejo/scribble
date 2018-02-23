@@ -85,4 +85,18 @@ public class DrawDemo
     {
         myCanvas.erase();
     }
+    
+    /**
+     * dibujAr triangulos indicando posicion de uno de los verticesx,y (sera regular)
+     */
+    public void triangulo(int x,int y){
+     Pen pen = new Pen(x,y, myCanvas);
+     pen.setColor(Color.GREEN);
+     
+     for(int i=0;i<3;i++){
+         pen.move(100);
+         pen.turn(-120);
+        }
+     
+    }
 }
